@@ -27,8 +27,14 @@
     color: #000;
     
 }
-.form-control  button{
-    text-align: center;
+.form-control{
+    text-align: left;
     color: #000;
+    
+}
+#login-btn{
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     
 }

@@ -19,33 +19,47 @@
                 <h2 class="sr-only text-center">Signup</h2>
                     <div class="col-md-4 justify-content-center bg-primamry" >
                     
-                            <form class="form" >
-                                <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-
+                            <form id="signup" class="form-content" >
+                                
                                 <div class="form-group">First Name
-                                    <input class="form-control" type="fname" name="fname" placeholder="First Name" />
+                                    <input id="fname" class="form-control" type="fname" name="fname" placeholder="First Name" />
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                     <small>Error message</small>
                                 </div>
 
                                 <div class="form-group">Last Name
-                                    <input class="form-control" type="lname" name="lname" placeholder="Last Name" />
+                                    <input id="lname" class="form-control" type="lname" name="lname" placeholder="Last Name" />
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                     <small>Error message</small>
                                 </div>
 
 
                                 <div class="form-group">Email
-                                    <input class="form-control" type="email" name="email" placeholder="name@domain.com" />
+                                    <input id="email" class="form-control" type="email" name="email" placeholder="name@domain.com" />
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <small>Error message</small>
                                 </div>
 
                                 <div class="form-group">Password
-                                    <input class="form-control" type="password" name="password" placeholder="Password" />
+                                    <input id="password" class="form-control" type="password" name="password" placeholder="Password" />
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                  <small>Error message</small>
                                 </div>
 
                                 <div class="form-group">Confirm Password
-                                    <input class="form-control" type="password" name="confirm-p" placeholder="Confirm Password" />
+                                    <input id="confirm-p" class="form-control" type="password" name="confirm-p" placeholder="Confirm Password" />
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                  <small>Error message</small>
                                 </div>
 
 
                                 <div class="pt-3 mb-0">
-                                    <button class="btn btn-primary btn-md btn-block" type="button">Signup</button>
+                                    <button id="register" class="btn btn-primary btn-md btn-block" type="submit">Signup</button>
                                   </div>
                            
                             </form>
