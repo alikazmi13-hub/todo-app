@@ -1,0 +1,32 @@
+.Home{
+    margin: 0%;
+    padding: 0%;
+    background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp');
+    height: 100vh;
+}
+.container-fluid{
+    padding: 0%;
+    margin:  0%;
+}
+.row{
+    margin: 0%;
+    padding: 0%;
+    background: #000;
+    color: #fff;
+   
+}
+
+.heading-home-1{
+    margin-top: 20%;
+    color: #000;
+    /* background: #000; */
+    text-align: center;
+    font-size: 32px;
+    justify-content: center;
+    
+}
+.p-1{
+    text-align: center;
+    font-size: 16px;
+    justify-content: center;
+}

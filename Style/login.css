@@ -1,0 +1,34 @@
+
+.container{
+    margin: 10%;
+    padding: 10%;
+    background-image: url("images/bg.jpg"); 
+    
+    
+}
+.row{
+    margin: 0%;
+    padding: 0%;
+}
+.form{
+    margin: 0%;
+    padding: 0%;
+
+}
+.form-group{
+    color: #000;
+    /* background:; */
+    text-align: left;
+    margin-top: 2%;
+    padding: 0%;
+}
+.form-control{
+    text-align: left;
+    color: #000;
+    
+}
+.form-control  button{
+    text-align: center;
+    color: #000;
+    
+}
