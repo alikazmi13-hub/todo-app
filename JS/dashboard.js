@@ -1,1 +1,6 @@
-alert('hello dashboard');
+
+
+
+const firstname = localStorage.getItem('firstname',fname);
+
+

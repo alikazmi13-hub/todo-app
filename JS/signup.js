@@ -1,94 +1,87 @@
-    const signup = document.getElementById('signup');
 
+
+    const signup = document.getElementById('signup');
     const fname = document.getElementById('fname');
     const lname = document.getElementById('lname');
     const email = document.getElementById('email');
     const pwd = document.getElementById('password');
     const confirm_p = document.getElementById('confirm-p');
-
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var passwordformat=  /^[A-Za-z]\w{7,14}$/;
 
     signup.addEventListener('submit',(e) => {
-    e.preventDefault();
+        
+        e.preventDefault();
 
-    addUser();
+        addUser();
 
 })
 
+    function addUser(){
+
+            const firstnameValue = fname.value.trim();
+            const lastnameValue = lname.value.trim();
+            const useremailValue = email.value.trim();
+            const passwordValue = pwd.value.trim();
+            const confirmpasswordValue = confirm_p.value.trim();
 
 
 
+            if(firstnameValue == ''){
+            setErrorFor(fname, 'First Name cannot be blank')
+
+            }else if(firstnameValue == ""){
+            setSuccessFor(fname)
+            localStorage.setItem('First name',fname.value)
+
+            }if(lastnameValue == ''){
+            setErrorFor(lname, 'Last Name cannot be blank')
+
+            }else if(lastnameValue == ""){
+            setSuccessFor(lname)
+            localStorage.setItem('Last Name',lname.value)
+
+            }if(useremailValue == ''){
+            setErrorFor(email, 'Email cannot be blank')
+
+            }else if(useremailValue.match(mailformat)){
+            setSuccessFor(email);
+            localStorage.setItem('Email',email.value);
+
+            }if(passwordValue == ''){
+            setErrorFor(pwd, 'Password cannot be blank')
+
+            }else if(passwordValue.match(passwordformat)){
+            setSuccessFor(pwd);
+            localStorage.setItem('Password',pwd.value);
 
 
+            }if(confirmpasswordValue == ''){
+            setErrorFor(confirm_p, 'Confirm Password cannot be blank')
 
-function addUser(){
-    
-    const firstnameValue = fname.value.trim();
-	const lastnameValue = lname.value.trim();
-	const useremailValue = email.value.trim();
-	const passwordValue = pwd.value.trim();
-	const confirmpasswordValue = confirm_p.value.trim();
+            }else if(confirmpasswordValue !== passwordValue){
+            setErrorFor(confirm_p, ' Password should be match')
 
-   
-
-    if(firstnameValue == ''){
-        setErrorFor(fname, 'First Name cannot be blank')
-
-    }else if(firstnameValue == ""){
-        setSuccessFor(fname)
-        localStorage.setItem('First name',fname.value)
-
-    }if(lastnameValue == ''){
-        setErrorFor(lname, 'Last Name cannot be blank')
-
-    }else if(lastnameValue == ""){
-        setSuccessFor(lname)
-        localStorage.setItem('Last Name',lname.value)
-
-    }if(useremailValue == ''){
-        setErrorFor(email, 'Email cannot be blank')
-        
-    }else if(useremailValue.match(mailformat)){
-        setSuccessFor(email);
-        localStorage.setItem('Email',email.value);
-
-    }if(passwordValue == ''){
-        setErrorFor(pwd, 'Password cannot be blank')
-
-    }else if(passwordValue.match(passwordformat)){
-        setSuccessFor(pwd);
-        localStorage.setItem('Password',pwd.value);
-        
-
-    }if(confirmpasswordValue == ''){
-        setErrorFor(confirm_p, 'Confirm Password cannot be blank')
-
-    }else if(confirmpasswordValue !== passwordValue){
-        setErrorFor(confirm_p, ' Password should be match')
-
-    }else if(confirmpasswordValue === passwordValue){
-        setSuccessFor(confirm_p)
-        localStorage.setItem('Password',confirm_p.value);
+            }else if(confirmpasswordValue === passwordValue){
+            setSuccessFor(confirm_p)
+            localStorage.setItem('Password',confirm_p.value);
 
 
-    }else{
-      return "Please Add Correct Detail" 
-    }
+            }else{
+            return "Please Add Correct Detail" 
+            }
+
+        }
 
 
+        function setErrorFor(input, message) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className = 'form-control error';
+            small.innerText = message;
+        }
 
-}
-
-
-function setErrorFor(input, message) {
-	const formControl = input.parentElement;
-	const small = formControl.querySelector('small');
-	formControl.className = 'form-control error';
-	small.innerText = message;
-}
-
-function setSuccessFor(input) {
-	const formControl = input.parentElement;
-	formControl.className = 'form-control success';
-}
+        function setSuccessFor(input) {
+            const formControl = input.parentElement;
+            formControl.className = 'form-control success';
+        }
