@@ -32,37 +32,54 @@ function addUser(){
 
    
 
-    if(firstnameValue === ''){
+    if(firstnameValue == ''){
         setErrorFor(fname, 'First Name cannot be blank')
-    }if(firstnameValue === ""){
+
+    }else if(firstnameValue == ""){
         setSuccessFor(fname)
+        localStorage.setItem('First name',fname.value)
 
-    }if(lastnameValue === ''){
+    }if(lastnameValue == ''){
         setErrorFor(lname, 'Last Name cannot be blank')
-    }if(lastnameValue === ""){
+
+    }else if(lastnameValue == ""){
         setSuccessFor(lname)
+        localStorage.setItem('Last Name',lname.value)
 
-    }if(useremailValue === ''){
+    }if(useremailValue == ''){
         setErrorFor(email, 'Email cannot be blank')
-    }if(useremailValue.match(mailformat)){
-        setSuccessFor(email)
+        
+    }else if(useremailValue.match(mailformat)){
+        setSuccessFor(email);
+        localStorage.setItem('Email',email.value);
 
-    }if(passwordValue === ''){
+    }if(passwordValue == ''){
         setErrorFor(pwd, 'Password cannot be blank')
-    }if(passwordValue.match(passwordformat)){
-        setSuccessFor(pwd)
 
-    }if(confirmpasswordValue != passwordValue){
-        setErrorFor(confirm_p, 'Password should be match')
-    }if(confirmpasswordValue === passwordValue){
+    }else if(passwordValue.match(passwordformat)){
+        setSuccessFor(pwd);
+        localStorage.setItem('Password',pwd.value);
+        
+
+    }if(confirmpasswordValue == ''){
+        setErrorFor(confirm_p, 'Confirm Password cannot be blank')
+
+    }else if(confirmpasswordValue !== passwordValue){
+        setErrorFor(confirm_p, ' Password should be match')
+
+    }else if(confirmpasswordValue === passwordValue){
         setSuccessFor(confirm_p)
+        localStorage.setItem('Password',confirm_p.value);
+
+
     }else{
-      localStorage.setItem('email',email.value);
+      return "Please Add Correct Detail" 
     }
 
 
 
 }
+
 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
@@ -75,4 +92,3 @@ function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form-control success';
 }
-	
