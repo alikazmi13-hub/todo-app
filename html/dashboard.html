@@ -15,20 +15,24 @@
 <body>
 
     <div id="dashboard">
-            <div class="container">
-                <h2>Welcome to Dashboard</h2>
+    
+        <div class="container">
+                <h2>Welcome to Dashboard <span id="firstNameSpan"></span>
+                </h2>
+                
                 <div id="newtask">
                     <input id="text-box" type="text" placeholder="Add Tasks">
-                    <button id="push">Add</button>
+                    <small></small>
+                    <button id="push" type="submit">Add</button>
+                   
                 </div>
-                <div>
-                    <ul id="alltasks">
-                        
-                    </ul>
-                </div>
-            
-            </div>
-       
+                <ul id="list-container">
+                    <li class="checked">Task 1</li>
+                    <li class="checked">Task 2</li>
+                    <li class="checked">Task 3</li>
+                </ul>
+        </div>
+    
     </div>
 
 

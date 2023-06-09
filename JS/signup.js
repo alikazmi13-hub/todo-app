@@ -27,19 +27,20 @@
 
 
 
-            if(firstnameValue == ''){
-            setErrorFor(fname, 'First Name cannot be blank')
+            if(firstnameValue == '' && firstnameValue.length <= 1){    
+                setErrorFor(fname, 'Enter Your First Name')
 
-            }else if(firstnameValue == ""){
+            }else if(firstnameValue == "" || firstnameValue.length >= 2 ){
             setSuccessFor(fname)
-            localStorage.setItem('First name',fname.value)
+            localStorage.setItem('First',fname.value)
+            // console.log(fname)
 
-            }if(lastnameValue == ''){
-            setErrorFor(lname, 'Last Name cannot be blank')
+            }if(lastnameValue == '' && lastnameValue.length <= 1){
+            setErrorFor(lname, 'Enter Your Last Name')
 
-            }else if(lastnameValue == ""){
+            }else if(lastnameValue == "" || lastnameValue.length >= 2){
             setSuccessFor(lname)
-            localStorage.setItem('Last Name',lname.value)
+            localStorage.setItem('Last',lname.value)
 
             }if(useremailValue == ''){
             setErrorFor(email, 'Email cannot be blank')
@@ -68,7 +69,7 @@
 
 
             }else{
-            return "Please Add Correct Detail" 
+                 return "Please Add Correct Detail" 
             }
 
         }

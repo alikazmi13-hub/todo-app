@@ -1,9 +1,7 @@
 const form = document.getElementById('login');
-
+const fname = document.getElementById('fname');
 const email = document.getElementById('useremail');
 const password = document.getElementById('userpassword');
-const fname =  document.getElementById('fname');
-const username = localStorage.getItem('First Name',fname);
 
 
 form.addEventListener('submit',(e) => {
@@ -17,7 +15,7 @@ function Validate(){
    
     const registeredemail = localStorage.getItem('Email',email);
     const registeredpassword = localStorage.getItem('Password',password);
-    const username = localStorage.getItem('First Name',fname);
+    const myname = localStorage.getItem('Name',fname);
 
 
     const emailValue = email.value.trim();
@@ -44,20 +42,12 @@ function Validate(){
            
             
             window.location.replace("dashboard.html")
-            document.write("Welcome to dashboard" + username.value);
-            // document.write(email);
+            document.write("Welcome to dashboard" + myname.value);
+           
         }
            
        
 }
-
-
-
-
-
-
-
-
 
 
 function setErrorFor(input, message) {
