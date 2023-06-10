@@ -60,12 +60,15 @@
             }if(confirmpasswordValue == ''){
             setErrorFor(confirm_p, 'Confirm Password cannot be blank')
 
-            }else if(confirmpasswordValue !== passwordValue){
-            setErrorFor(confirm_p, ' Password should be match')
+            }else if(!confirmpasswordValue == passwordValue){
+            setErrorFor(confirm_p, 'Password should be match')
 
             }else if(confirmpasswordValue === passwordValue){
             setSuccessFor(confirm_p)
-            localStorage.setItem('Password',confirm_p.value);
+            localStorage.setItem('Password',confirm_p.value)
+            window.location.replace("login.html")
+            ;
+
 
 
             }else{

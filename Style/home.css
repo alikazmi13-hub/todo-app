@@ -1,0 +1,23 @@
+.container{
+    margin: 0%;
+    padding: 0%;
+}
+
+
+
+.navbar{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+}
+.navbar span{
+    margin-left: 2%;
+}
+
+
+
+.button-group{
+    margin-right: 0%;
+    padding: 0%;
+    position: absolutes;
+}

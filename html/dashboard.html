@@ -15,24 +15,27 @@
 <body>
 
     <div id="dashboard">
-    
-        <div class="container">
-                <h2>Welcome to Dashboard <span id="firstNameSpan"></span>
-                </h2>
-                
-                <div id="newtask">
-                    <input id="text-box" type="text" placeholder="Add Tasks">
-                    <small></small>
-                    <button id="push" type="submit">Add</button>
-                   
+        <!-- Navbar -->
+        <nav class="navbar navbar-light bg-dark">
+            <span class="navbar-brand text-light mt-1 h1">Dashboard</span>
+          </nav>
+        <!-- LOGOUT -->
+            <div class="logout-div">
+            <input type="submit" id="logout-btn"  class ="btn btn-primary" value="Logout" onclick="Logout()" />
+            </div>  
+
+            <!-- DASHBOARD -->
+                <div class="container">
+                        <h2>Welcome to Dashboard <span id="firstNameSpan"></span></h2>
+                        <h6>You dont have any list at this moment </h6>
+                        
+                        <div id="newtask">
+                            <input type="submit" class="btn btn-primary text-light" id="push" value="Create List" onclick="toDo()" />
+                            <small></small>
+                        </div>
+
                 </div>
-                <ul id="list-container">
-                    <li class="checked">Task 1</li>
-                    <li class="checked">Task 2</li>
-                    <li class="checked">Task 3</li>
-                </ul>
-        </div>
-    
+        
     </div>
 
 
