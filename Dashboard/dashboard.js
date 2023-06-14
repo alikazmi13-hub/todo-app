@@ -16,7 +16,6 @@
         window.location.href = "login.html"
     }
     function toDo(){
-        
-        window.location.href = "../lists/to-do.html" 
+        window.location.replace("/List/list.html")
     }
 

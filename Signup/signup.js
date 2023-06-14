@@ -66,9 +66,9 @@
             }else if(confirmpasswordValue === passwordValue){
             setSuccessFor(confirm_p)
             localStorage.setItem('Password',confirm_p.value)
-            window.location.replace("login.html")
+            window.location.replace("/Login/login.html")
             ;
-
+            
 
 
             }else{
