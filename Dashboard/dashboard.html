@@ -15,18 +15,16 @@
 <body>
 
     <div id="dashboard">
-        <!-- Navbar -->
-        <nav class="navbar navbar-light bg-dark">
-            <span class="navbar-brand text-light mt-1 h1">Dashboard</span>
-          </nav>
-        <!-- LOGOUT -->
+        <nav class="navbar navbar-light bg-primary">
+            <span class="navbar-brand text-light mt-1 h1">DASHBOARD</span>
             <div class="logout-div">
-            <input type="submit" id="logout-btn"  class ="btn btn-primary" value="Logout" onclick="Logout()" />
-            </div>  
-
+              <input type="submit" id="logout-btn"  class ="btn btn-danger" value="Logout" onclick="Logout()" />
+              </div>  
+          </nav>
+          
             <!-- DASHBOARD -->
                 <div class="container">
-                        <h2>Welcome to Dashboard <span id="firstNameSpan"></span></h2>
+                        <h2>Welcome to Dashboard <span id="firstNameSpan">${}</span></h2>
                         <h6>You dont have any list at this moment </h6>
                         
                         <div id="newtask">

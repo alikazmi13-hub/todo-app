@@ -39,7 +39,7 @@ function Validate(){
         }else{
             (passwordValue.match(registeredpassword))
             setSuccessFor(password)
-            window.location.replace("/dashboard/dashboard.html")
+            window.location.replace("/Dashboard/dashboard.html")
             document.write("Welcome to dashboard" + myname.value);
            
         }

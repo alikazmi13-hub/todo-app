@@ -8,65 +8,77 @@ let tasksArray = []
 
 addtask.addEventListener('click',() => {
     addTask();
-    // viewTask();
+    // displayTable();
 })
 
 
 // Getting Data from local storage as string
-let objStr = localStorage.getItem('Task')
+        let objStr = localStorage.getItem('Task')
 
-if(objStr!=null){
-    // Creating again object
-    tasksArray = JSON.parse(objStr);
-}
+        if(objStr!=null){
+
+        // Creating again object
+            tasksArray = JSON.parse(objStr);
+        }
+
+    // callinig view function
+        displayTable();
+
+    // Fnction for add Task
+        function addTask(){
+            const inputTask = inputText.value;
+            tasksArray.push({'Task': inputTask})
+            saveTask(tasksArray)
+            // empty input field
+            inputText.value = '';
+            displayTable();
+        }
+
+            function displayTable(){
+                let display = '';
+                tasksArray.forEach((task,i) => {
+                // it will auto add data in row
+                display += `   
+                <tr>
+                    <th id="scope" scope="row">${i+1}</th>
+                    <td>${task.Task}</td>
+                    <td id="actions"><i class="btn btn-sm  fa fa-view btn-primary" onclick='viewTask(${i})'>View</i>
+                    <i class="btn btn-sm  fa fa-delete btn-danger" onClick='deleteTask(${i})'>Delete</i></td>
+                </tr>
+                `;
+               
+                });
+
+                recordsDisplay.innerHTML = display;
+               
+            }
+         
+
+         // Save Function
+
+            function saveTask(tasksArray){
+                let str = JSON.stringify(tasksArray)
+                arr = localStorage.setItem('Task',str);
+            }
+
+            function viewTask(id){
+
+                tasksArray.alert(id,inputText)
+               
+            }
+
+            function deleteTask(id){
+              tasksArray.splice(id,1)
+              saveTask(tasksArray)
+              displayTable(tasksArray)
+            }
 
 
-// viewTask();
 
-// Fnction for add Task
-function addTask(){
-    const myTask = inputText.value;
-    tasksArray.push({'Task': myTask})
-    saveTask(tasksArray)
-    console.log(tasksArray)
-//  viewTask();
-}
-
-function viewTask(){
-    let display = '';
-    tasksArray.forEach((myTask,i) => {
-        console.log(task)
-        // it will auto add data in row
-        display += ` <tr>
-        <th scope="row">${i+1}</th>
-        <td>${myTask.tasksArray}</td>
-        <td>${myTask.tasksArray}</td>
-        <td>
-          <i class="btn text-white fa fa-edit btn-primary mx-2">delete</i>
-          <i class="btn text-white fa fa-delete btn-danger mx-2">delete</i>
-         </td>
-      </tr>`;
-
-    });
-    recordsDisplay.innerHTML = display;
-
-}
-// Actions
-
-function saveTask(tasksArray){
-    let str = JSON.stringify(tasksArray)
-    arr = localStorage.setItem('Task',str);
-}
-function editTask(){
-    
-}
-function deleteTask(){
-    
-}
-
-
-
-
+            function Logout(){
+        
+                window.location.replace("/Login/login.html")
+            }
 
 
 
